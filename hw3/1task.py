@@ -4,7 +4,12 @@
 
 
 def sum_range(start: int, end: int) -> int:
-    pass
+    sum1 = 0
+    if start > end:
+        start, end = end, start
+    for i in range(start, end+1):  # 18
+        sum1 += i
+    return sum1
 
 
 print(sum_range(10, 0))

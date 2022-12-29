@@ -6,7 +6,15 @@
 
 
 def arifmetic(a: int, b: int, op) -> None:
-    pass
-
+    if op == "+":
+        print(a+b)
+    elif op == "-":
+        print(a-b)
+    elif op == "*":
+        print(a*b)
+    elif op == "/":
+        print(a/b)
+    else:
+        print('Невідома операція')
 
 arifmetic(5, 10, '+')
