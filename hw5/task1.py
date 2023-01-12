@@ -4,5 +4,17 @@
 # суммирует положительные значения и возвращает сумму платежа в конце месяца.
 
 
-def amount_payment(payment):
+my_list = [890, -99, -456, 890]
+
+
+def amount_payment(my_list) -> int:
+    payment = 0
+    for i in my_list:
+        if i > 0:
+            payment = payment + i
+    return payment
+
+
+print(amount_payment(my_list))
+
     

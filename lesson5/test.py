@@ -1,3 +1,4 @@
+# методи списків
 my_list = []
 my_list1 = list()
 

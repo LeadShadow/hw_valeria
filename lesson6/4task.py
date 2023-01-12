@@ -4,6 +4,15 @@
 # Таким образом результат может быть как список ключей, так и пустой список, если мы ничего
 # не найдем.
 
+def lookup_key(data: dict, value) -> list:
+    list = []
+    for k, v in data.items():
+        if v == value:
+            list.append(k)
+    return list
 
 
+
+if __name__ == "__main__":
+    print(lookup_key({'a': 1, 'b': 2}, 1))
 

@@ -4,4 +4,13 @@
 # и возвращает измененный список в качестве результата.
 
 
-def prepare_data(data):
+list_ = [2, 4, 1, 3, 5]
+
+
+def prepare_data(list_) -> list:
+    list_.remove(max(list_))
+    list_.remove(min(list_))
+    return sorted(list_)
+
+
+print(prepare_data(list_))
