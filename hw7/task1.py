@@ -12,4 +12,21 @@
 # Функция is_valid_password должна вернуть True, если переданный в качестве параметра пароль
 # отвечает требованиям надежности. В противном случае вернуть False.
 
+def is_valid_password(yourpass: str):
+    has_upper = False
+    has_lower = False
+    has_num = False
+    for i in yourpass:
+        if 'A' <= i <= 'Z':
+            has_upper = True
+        elif 'a' <= i <= 'z':
+            has_lower = True
+        elif '0' <= i <= '9':
+            has_num = True
+    if len(yourpass) == 8 and has_lower and has_upper and has_num:
+        return True
+    return False
+
+password = "567uponU"
+print(is_valid_password(password))
 
