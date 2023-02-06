@@ -25,4 +25,11 @@
 # print(is_spam_words("Ты лох.", ["лох"], True))  # True
 
 def is_spam_words(text, spam_words, space_around=False):
-    pass
+    for ch in spam_words:
+        if ch.lower() in text.lower().strip(' .').split():
+            return True
+        elif ch.lower() in text.lower() and not space_around:
+            return True
+    return False
+
+print(is_spam_words("Ты лох.", ["лох"], True))
