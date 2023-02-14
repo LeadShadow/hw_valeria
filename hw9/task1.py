@@ -11,5 +11,20 @@
 import re
 
 
+def title_letter(text):
+    text1 = ''
+    list_text = text.split('. ')
+    for i in list_text:
+        text1 += i.capitalize() + '. '
+    return text1
+
+
+
 def replace_spam_words(text, spam_words):
-    pass
+    for word in spam_words:
+        text = re.sub(word, ("*" * len(word)), text.lower())
+
+    return title_letter(text)
+
+
+print(replace_spam_words("Ти лох і абобус. Мене звуть по клиці лох і абобус", ("лох", "абобус")))
