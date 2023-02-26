@@ -21,3 +21,16 @@
 # Robert Stivenson,28
 # Alex Denver,30
 # Drake Mikelsson,19
+
+from pathlib import Path
+def write_employees_to_file(employee_list, path):
+    file = open(path, 'w+', encoding='utf-8')
+    for section in employee_list:
+        for employee in section:
+          file.write(f'{employee}\n')
+    file.close()
+
+list_ = [['Mariam Loving,46', 'Peter Parker,27'],['Andy Lane,35']]
+pth = Path("text_file.txt")
+if __name__ == "__main__":
+    write_employees_to_file(list_, pth)
