@@ -27,3 +27,23 @@
 # прочтите содержимое файла, используя режим "r".
 # мы используем менеджер контекста with
 # верните из функции список кошек из файла в требуемом формате
+
+
+from pathlib import Path
+def get_cats_info(path):
+    data_cats = list()
+    with open(path, "r") as file:
+        for line in file:
+            if not line:
+                break
+            line = line.replace('\n', '')
+            line_split = line.split(',')
+            dict_ = { "id": line_split[0], "name": line_split[1], "age": line_split[2] }
+            data_cats.append(dict_)
+    return data_cats
+    file.close()
+
+
+if __name__ == "__main__":
+    path_ = Path('cats.txt')
+    print(get_cats_info(path_))
