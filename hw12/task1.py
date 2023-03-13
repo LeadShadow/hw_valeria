@@ -9,5 +9,9 @@
 
 import shutil
 
+from pathlib import Path
 
-def unpack(archive_path, path_to_unpack):
+def unpack(archive_path: Path, path_to_unpack: Path):
+    shutil.unpack_archive(archive_path, path_to_unpack, 'zip')
+
+unpack(Path('hw12/backup.zip'), Path('C:/Users/pc/Desktop/заняття'))
