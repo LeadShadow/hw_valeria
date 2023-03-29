@@ -16,4 +16,14 @@
 # Откройте файл для записи и сохраните ключ и значение из словаря users_info в виде отдельной
 # строки "username: password" для каждого элемента словаря users_info
 
+from pathlib import Path
+
 def save_credentials_users(path, users_info):
+    with open(path, 'wb', encoding='utf-8'):
+        for k, v in users_info.items():
+            file.write(f"{k}: {v}\n".encode())
+
+
+if __name__ == "__main__":
+    users_list = {"leon": "36496760", "manuel": "fkjh4567"}
+    print(save_credentials_users('C:/Users/Lera/Documents/test_python13.txt', users_list))
