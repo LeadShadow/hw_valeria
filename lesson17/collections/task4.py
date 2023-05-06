@@ -15,3 +15,25 @@ remove(value) - удаляет первое вхождение value.
 reverse() - разворачивает очередь.
 rotate(n) - последовательно переносит n элементов из конца в начало (если n отрицательно, то наоборот).
 """
+from collections import deque
+
+
+l = list(range(1, 10))
+l_deque = deque()
+print(l_deque)
+l_deque = deque(l, 5)
+print(l_deque)
+
+
+l_deque.appendleft(10)
+print(l_deque)
+l_deque.append(9)
+print(l_deque)
+print(l_deque.count(9))
+print(l_deque.index(6))
+
+l_deque.rotate(3)
+print(l_deque)
+
+l_deque.reverse()
+print(l_deque)

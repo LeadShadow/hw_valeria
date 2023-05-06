@@ -18,3 +18,15 @@ from random import randrange
 
 
 def get_numbers_ticket(min, max, quantity):
+    if not (min < quantity < max) or (min < 1 or max > 1000) or (quantity > max - min):
+        return []
+    result = []
+    while len(result) < quantity:
+        bowl = randrange(min, max + 1)
+        if bowl in result:
+            continue
+        result.append(bowl)
+    return sorted(result)
+
+if __name__ == '__main__':
+    print(get_numbers_ticket(1, 100, 5))
