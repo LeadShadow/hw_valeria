@@ -17,3 +17,31 @@
 # перевод строк '\n' и лишние пробелы, которые надо убрать).
 # уберите значение 'profession' (замените на пустую строку "" при помощи метода replace).
 # верните итоговую строку из файла
+
+def get_employees_by_profession(path, profession):
+    with open(path, 'r') as fh:
+        workers = fh.readlines()
+    result = []
+    for worker in workers:
+        man = worker.strip().split()
+        if man[1] == profession:
+            result.append(man[0])
+    return ' '.join(result)
+
+# from pathlib import Path
+#
+# def get_employees_by_profession(path, profession):
+#     with open(path, 'r') as f:
+#         list_lines = []
+#         while True:
+#             line = f.readline()
+#             if line:
+#                 if profession in line:
+#                     list_lines.append(line)
+#             if not line:
+#                 break
+#     lines = ''.join(list_lines)
+#     return lines.replace(profession, '')
+
+if __name__ == '__main__':
+    print(get_employees_by_profession('test.txt', 'worker'))
