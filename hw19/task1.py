@@ -20,3 +20,28 @@
 # 85.0
 # 90.0
 # 95.0
+def better_func(func):
+    def inner(discount, price):
+        print(f'With a {discount*100}% discount, you get a price of:')
+        result = func(discount, price)
+        print(f'{result} UAH')
+        return result
+    return inner
+# def better_func(func):
+#   def inner(discount):
+#     print(f'with a {discount*100}% discount, you get a price of:')
+#     result = func(discount)
+#     print(f'{result}UAH')
+#     return result
+#   return inner
+
+@better_func
+def discount_price(discount, price):
+    result = price - price * discount
+    return result
+
+
+if __name__ == '__main__':
+    cost_15 = discount_price(0.15, 100)
+    cost_10 = discount_price(0.10, 100)
+    cost_05 = discount_price(0.05, 100)
