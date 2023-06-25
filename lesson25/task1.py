@@ -19,10 +19,32 @@ class Animal:
 
 
 class Owner:
-    def __init__(self, ):
-        pass
+    def __init__(self, name, age, address):
+        self.name = name
+        self.age = age
+        self.address = address
 
     def info(self):
-        pass
+        return {'name': self.name, 'age': self.age, 'address': self.address}
 
 
+class Dog(Animal):
+    def __init__(self, nickname, weight, breed, owner: Owner):
+        self.owner = owner
+        self.breed = breed
+        super().__init__(nickname, weight)
+
+    def say(self):
+        return 'Woof'
+
+    def who_is_owner(self):
+        return self.owner.info()
+
+
+owner1 = Owner('Sasha', 18, 'Keletskya 90')
+dog1 = Dog("Barbos", 23, "labrador", owner1)
+print(dog1.who_is_owner())
+
+owner2 = Owner('Valeria', 14, 'Keletskya 89')
+dog2 = Dog("Tom", 10, "chihua-chihua", owner2)
+print(dog2.who_is_owner())

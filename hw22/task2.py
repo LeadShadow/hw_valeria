@@ -9,9 +9,10 @@
 # dog = Dog("Barbos", 23, "labrador")
 
 class Animal:
-    def __init__(self, nickname, weight):
+    def __init__(self, nickname, weight, breed):
         self.nickname = nickname
         self.weight = weight
+        self.breed = breed
 
     def say(self):
         pass
@@ -20,4 +21,12 @@ class Animal:
         self.weight = weight
 
 
-class Dog():
+class Dog(Animal):
+    def say(self):
+        return 'Woof'
+
+
+dog = Dog("Barbos", 23, "labrador")
+print(dog.nickname)
+print(dog.breed)
+print(dog.weight)
