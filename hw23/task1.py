@@ -26,3 +26,10 @@ class Cat(Animal):
 
 
 class CatDog:
+    def __init__(self, nickname, weight):
+        self.cat = Cat(nickname, weight)
+
+    def say(self):
+        return self.cat.say()
+
+
