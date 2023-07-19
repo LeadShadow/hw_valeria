@@ -33,3 +33,7 @@ if 'age' in user:
 password = input('Password: ')
 if len(password) < 8:
     print('Your password is too short!')
+
+
+print(1,2,3,4,5, end=' ')
+print(1,2,3,4,5)
