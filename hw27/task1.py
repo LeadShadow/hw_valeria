@@ -148,3 +148,5 @@ class RandomVectors:
     def __init__(self, max_vectors=10, max_points=50):
 
     def __iter__(self):
+
+# ps: також проглянути 31 заняття запустити, прогнати всі команди і зрозуміти логіку
