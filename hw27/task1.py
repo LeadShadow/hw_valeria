@@ -136,17 +136,28 @@ class Vector:
         return self.len() >= vector.len()
 
 
-class Iterable:
+class Iterable():
     def __init__(self, max_vectors, max_points):
         self.current_index = 0
         self.vectors = []
-
+        self.max_vectors = max_vectors
+        self.max_points = max_points
     def __next__(self):
+        if self.current_index <= self.max_vectors - 1:
+            self.current_index += 1
+            return f'Vector({randrange(self.max_points)},{randrange(self.max_points)})'
+        raise StopIteration
 
 
 class RandomVectors:
     def __init__(self, max_vectors=10, max_points=50):
-
+        self.max_vectors = max_vectors
+        self.max_points = max_points
     def __iter__(self):
+        return Iterable(self.max_vectors, self.max_points)
+
+iterable = RandomVectors()
+for vector in iterable:
+    print(vector)
 
 # ps: також проглянути 31 заняття запустити, прогнати всі команди і зрозуміти логіку

@@ -1,0 +1,4 @@
+hotel|700
+breakfast|100
+taxi|150
+lunch|150
